@@ -32,6 +32,3 @@ class Properties:
         if self.y >= self.ground:
             self.y = self.ground
             self.velocity *= -self.ground_absorption
-
-        if abs(self.velocity) < 0.1:
-            self.velocity = 0

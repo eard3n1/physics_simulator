@@ -1,0 +1,36 @@
+class Properties:
+    def __init__(
+                self, ground, x, y, 
+                mass, acceleration, velocity, 
+                delta_time, apply_force, 
+                ground_absorption, wind_resistance
+                ):
+        self.ground = ground
+        self.y = y
+        self.x = x
+
+        self.mass = mass
+        self.acceleration = acceleration
+        self.velocity = velocity
+        self.delta_time = delta_time
+        self.apply_force = apply_force
+        self.ground_absorption = ground_absorption
+        self.wind_resistance = wind_resistance
+
+    def apply_upward_force(self):
+        self.velocity += -self.apply_force / self.mass
+
+    def apply_downward_force(self):
+        self.velocity += self.apply_force / self.mass
+
+    def advance(self):
+        self.velocity += self.acceleration * self.delta_time # gravity
+
+        drag_acceleration = (-self.wind_resistance * self.velocity * abs(self.velocity)) / self.mass
+        self.velocity += drag_acceleration * self.delta_time # wind resistance
+
+        self.y += self.velocity
+
+        if self.y >= self.ground:
+            self.y = self.ground
+            self.velocity *= self.ground_absorption

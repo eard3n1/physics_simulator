@@ -1,10 +1,10 @@
-<h1>physics_simulator</h1>
-<p>Pretty accurate simulation of free fall & with wind resistance.</p>
+<h1>drag_fall</h1>
+<p>Pretty accurate simulation of free fall & introducing wind resistance.</p>
 
 <h2>Setup</h2>
 <ol>
     <li>Clone the repository:
-        <pre><code>git clone https://github.com/eard3n1/physics_simulator.git</code></pre>
+        <pre><code>git clone https://github.com/eard3n1/drag_fall.git</code></pre>
     </li>
     <br>
     <li>Install pygame if you don't have it already:
@@ -21,7 +21,7 @@
     <p>Use <code>KEY_UP</code> & <code>KEY_DOWN</code> to apply force in desirable direction</p> 
   </li>
   <li>
-    <p>Play with the values inside the <code>config.py</code> file to change different properties</p>
+    <p>Adjust values inside the <code>config.py</code> file to change different properties</p>
   </li>
 </ul>
 
